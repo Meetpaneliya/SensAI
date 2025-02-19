@@ -34,6 +34,7 @@ export async function updateUser(data) {
             data: {
               industry: data.industry,
               ...insights,
+              confidence: 0.8, // Add confidence score
               nextUpdate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
             },
           });

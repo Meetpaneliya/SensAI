@@ -1,5 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    serverActions: {
+      bodySizeLimit: '2mb'
+    }
+  },
   images: {
     remotePatterns: [
       {
@@ -8,6 +13,10 @@ const nextConfig = {
       },
     ],
   },
+  // Handle port configuration through start script instead
+  env: {
+    PORT: process.env.PORT || 3000
+  }
 };
 
 export default nextConfig;

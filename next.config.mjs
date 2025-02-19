@@ -1,21 +1,27 @@
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//   images: {
+//     remotePatterns: [
+//       {
+//         protocol: "https",
+//         hostname: "randomuser.me",
+//       },
+//     ],
+//   },
+// };
+
+// export default nextConfig;
+
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    serverActions: {
-      bodySizeLimit: '2mb'
-    }
+    serverActions: true,
   },
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "randomuser.me",
-      },
-    ],
-  },
-  // Handle port configuration through start script instead
-  env: {
-    PORT: process.env.PORT || 3000
+  // Add this section
+  server: {
+    port: process.env.PORT || 3000,
+    host: '0.0.0.0'
   }
 };
 
